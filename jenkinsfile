@@ -50,7 +50,7 @@ pipeline {
         } // end stage
         stage("deploy") {
             steps{
-                echo "${env.BUILD_NUMBER}"
+                echo "${env.JENKINS_URL}"
             }
         }
     } // end stages
