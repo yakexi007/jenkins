@@ -10,7 +10,7 @@ pipeline {
                     properties([
                         parameters([
                             choice(
-                                choices: ['master', 'dev'], 
+                                choices: ['master', 'dev','prod'], 
                                 name: 'PARAMETER_01'
                             ),
                             booleanParam(
@@ -19,7 +19,7 @@ pipeline {
                                 name: 'Refresh'
                             ),
                             string(
-                                defaultValue: 'scriptcrunch', 
+                                defaultValue: 'script_abc', 
                                 name: 'STRING-PARAMETER', 
                                 trim: true
                             )
