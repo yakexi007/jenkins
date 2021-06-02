@@ -39,7 +39,8 @@ pipeline {
             steps{
                 // echo "I said, Hello Mr. ${BITBUCKET_COMMON_CREDS_USR}"
                 // echo "${BITBUCKET_COMMON_CREDS_PSW}"
-                echo "${params.choice} World!" 
+                echo "${params.PARAMETER_01} World!" 
+                echo ""
             }
         } // end stage
         stage("test") {
