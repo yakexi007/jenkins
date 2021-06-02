@@ -31,10 +31,10 @@ pipeline {
         stage('Read Jenkinsfile') {
             when {
                 expression { return params.Refresh == true }
+                return
             }
             steps {
               echo("stop")
-              return
             }
         }
         stage("checkout") {
