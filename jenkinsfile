@@ -11,5 +11,10 @@ pipeline {
                 echo "b"
             }
         } // end stage
+        stage("pipe3") {
+            steps{
+                echo "c"
+            }
+        }
     } // end stages
 }
