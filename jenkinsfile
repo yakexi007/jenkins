@@ -54,4 +54,13 @@ pipeline {
             }
         }
     } // end stages
+    post {
+        always {
+            echo "success"
+        }
+        failure {
+            mail to: team@example.com, subject: 'The Pipeline failed :('
+        }
+    }
+
 }
