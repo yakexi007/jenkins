@@ -14,9 +14,9 @@ pipeline {
                                 name: 'PARAMETER_01'
                             ),
                             booleanParam(
-                                defaultValue: true, 
-                                description: '', 
-                                name: 'BOOLEAN'
+                                defaultValue: false, 
+                                description: 'Read Jenkinsfile and exit.', 
+                                name: 'Refresh'
                             ),
                             text(
                                 defaultValue: '''
@@ -33,6 +33,14 @@ pipeline {
                         ])
                     ])
                 }
+            }
+        }
+        stage('Read Jenkinsfile') {
+            when {
+                expression { return params.Refresh == true }
+            }
+            steps {
+              echo("stop")
             }
         }
         stage("checkout") {
