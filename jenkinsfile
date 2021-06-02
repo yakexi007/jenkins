@@ -60,5 +60,12 @@ pipeline {
                 echo "${env.JENKINS_URL}"
             }
         }
+        stage('Example Build') {
+            agent { docker 'maven:3-alpine' } 
+            steps {
+                echo 'Hello, Maven'
+                sh 'mvn --version'
+            }
+        }
     } // end stages
 }
