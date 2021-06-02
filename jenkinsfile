@@ -1,9 +1,10 @@
 pipeline {
     agent any
+    def username = 'Jenkins'
     stages {
         stage("build") {
             steps{
-                echo "build"
+                echo "I said, Hello Mr. ${username}"
             }
         } // end stage
         stage("test") {
