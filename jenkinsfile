@@ -70,15 +70,15 @@ pipeline {
                         switch("${env.DEPLOY_ENV}"){
                             case 'prd':
                                 println('deploy prd env')
-                                // break;
+                                break;
 
                             case 'uat':
                                 println('deploy uat env')
-                                // break;
+                                break;
 
                             case 'dev':
                                 println('deploy dev env')
-                                // break;
+                                break;
                             
                             default:
                                 println('error env')
