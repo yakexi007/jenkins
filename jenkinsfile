@@ -33,7 +33,7 @@ pipeline {
                 expression { return params.Refresh == true }
             }
             steps {
-              error('Stop this pipeline only refresh params')
+              error('Stop this pipeline only refresh params!')
             }
         }
         stage("checkout") {
