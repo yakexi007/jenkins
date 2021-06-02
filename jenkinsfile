@@ -29,13 +29,16 @@ pipeline {
             }
         }
         stage('Read Jenkinsfile') {
-            when {
-                expression { return params.Refresh == true }
+            // when {
+            //     expression { return params.Refresh == true }
+            //     return
+            // }
+            // steps {
+            //   echo("stop")
+            // }
+            if (env.BRANCH_NAME == "deployment") {                                          
                 return
-            }
-            steps {
-              echo("stop")
-            }
+            } 
         }
         stage("checkout") {
             steps{
