@@ -35,6 +35,10 @@ pipeline {
                 }
             }
         }
+        stage("checkout"){
+            // checkout from github
+            git url: 'git@github.com:yakexi007/jenkins.git', branch: 'master'
+        }
         stage("build") {
             steps{
                 // echo "I said, Hello Mr. ${BITBUCKET_COMMON_CREDS_USR}"
