@@ -1,13 +1,17 @@
 pipeline {
     agent any
-    environment {
-        BITBUCKET_COMMON_CREDS = credentials('test')
+    // environment {
+    //     BITBUCKET_COMMON_CREDS = credentials('test')
+    // }
+    parameters {
+        string(name: 'abc', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
     stages {
         stage("build") {
             steps{
-                echo "I said, Hello Mr. ${BITBUCKET_COMMON_CREDS_USR}"
-                echo "${BITBUCKET_COMMON_CREDS_PSW}"
+                // echo "I said, Hello Mr. ${BITBUCKET_COMMON_CREDS_USR}"
+                // echo "${BITBUCKET_COMMON_CREDS_PSW}"
+                echo "${params.abc} World!" 
             }
         } // end stage
         stage("test") {
