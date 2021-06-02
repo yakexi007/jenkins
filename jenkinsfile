@@ -45,12 +45,12 @@ pipeline {
         } // end stage
         stage("test") {
             steps{
-                echo "${params.MULTI-LINE-STRING}"
+                echo "test"
             }
         } // end stage
         stage("deploy") {
             steps{
-                echo "${params.STRING-PARAMETER}"
+                echo "deploy"
             }
         }
     } // end stages
