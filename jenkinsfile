@@ -45,12 +45,12 @@ pipeline {
         } // end stage
         stage("test") {
             steps{
-                echo "test"
+                echo "${env.BUILD_ID}"
             }
         } // end stage
         stage("deploy") {
             steps{
-                echo "deploy"
+                echo "${env.BUILD_NUMBER}"
             }
         }
     } // end stages
