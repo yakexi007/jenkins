@@ -18,13 +18,6 @@ pipeline {
                                 description: 'Read Jenkinsfile and exit.', 
                                 name: 'Refresh'
                             ),
-                            text(
-                                defaultValue: '''
-                                this is a multi-line 
-                                string parameter example
-                                ''', 
-                                 name: 'MULTI-LINE-STRING'
-                            ),
                             string(
                                 defaultValue: 'scriptcrunch', 
                                 name: 'STRING-PARAMETER', 
@@ -41,6 +34,7 @@ pipeline {
             }
             steps {
               echo("stop")
+              return
             }
         }
         stage("checkout") {
