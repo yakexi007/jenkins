@@ -10,7 +10,7 @@ pipeline {
                     properties([
                         parameters([
                             choice(
-                                choices: ['ONE', 'TWO'], 
+                                choices: ['master', 'dev'], 
                                 name: 'PARAMETER_01'
                             ),
                             booleanParam(
@@ -35,9 +35,11 @@ pipeline {
                 }
             }
         }
-        stage("checkout"){
+        stage("checkout") {
+            steps{
             // checkout from github
-            git url: 'git@github.com:yakexi007/jenkins.git', branch: 'master'
+            git url: 'git@github.com:yakexi007/jenkins.git', branch: "${params.PARAMETER_01}"
+            }
         }
         stage("build") {
             steps{
