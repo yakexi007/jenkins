@@ -60,7 +60,6 @@ pipeline {
                 echo "${env.JENKINS_URL}"
             }
         }
-            stages {
         stage("test") {
             steps {
                 timeout(time: 1, unit: 'MINUTES') {
