@@ -36,9 +36,11 @@ pipeline {
             // steps {
             //   echo("stop")
             // }
-            if (env.BRANCH_NAME == "deployment") {                                          
+            if (${params.Refresh} == true) {                                          
                 return
-            } 
+            } else {                                   
+                echo "hh"
+            }   
         }
         stage("checkout") {
             steps{
