@@ -38,7 +38,8 @@ pipeline {
         stage("checkout") {
             steps{
             // checkout from github
-            git url: 'git@github.com:yakexi007/jenkins.git', branch: "${params.PARAMETER_01}"
+            // git url: 'git@github.com:yakexi007/jenkins.git', branch: "${params.PARAMETER_01}"
+            git branch: "${params.PARAMETER_01}", credentialsId: '7f06f377-9e27-4b5c-ba86-40c4f93d7914', url: 'git@github.com:yakexi007/jenkins.git'
             }
         }
         stage("build") {
