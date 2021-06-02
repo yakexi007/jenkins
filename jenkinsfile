@@ -1,12 +1,12 @@
 pipeline {
     agent any
     environment {
-        aa = "aabbcc"
+        BITBUCKET_COMMON_CREDS = credentials('test')
     }
     stages {
         stage("build") {
             steps{
-                echo "I said, Hello Mr. ${aa}"
+                echo "I said, Hello Mr. ${BITBUCKET_COMMON_CREDS}"
             }
         } // end stage
         stage("test") {
