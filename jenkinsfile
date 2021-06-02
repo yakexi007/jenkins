@@ -29,18 +29,12 @@ pipeline {
             }
         }
         stage('Read Jenkinsfile') {
-            // when {
-            //     expression { return params.Refresh == true }
-            //     return
-            // }
-            // steps {
-            //   echo("stop")
-            // }
-            if (${params.Refresh} == true) {                                          
-                return
-            } else {                                   
-                echo "hh"
-            }   
+            when {
+                expression { return params.Refresh == true }
+            }
+            steps {
+              error('Stop this pipeline only refresh params')
+            }
         }
         stage("checkout") {
             steps{
