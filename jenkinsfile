@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage("build") {
             steps{
-                echo "I said, Hello Mr. ${BITBUCKET_COMMON_CREDS}"
+                echo "I said, Hello Mr. ${BITBUCKET_COMMON_CREDS_USR}"
+                echo "${BITBUCKET_COMMON_CREDS_PSW}"
             }
         } // end stage
         stage("test") {
